@@ -1,0 +1,12 @@
+====== ZIM ======
+Created Wednesday 10 December 2014
+[[+ZIM|+ some notes on using ZIM]] 
+Possibly due to a bug, ZIM fails to export the contents of the page at the top of the document tree until it encounters the first link.  So this is primarily a dummy page to provide that first link.
+
+However it also provides a useful location to describe how to get the HTML generated automatically with the miniimum of fuss.  The default HTML export template always generates a fairly featureless index page which I don't want.  However if you call the top of the document tree [[:index|index]] too and then when you export the wiki to HTML you call the auto generated page list contents you end up with the wanted [[:index|index.html]] as the landing page.
+
+Finally a note on adding links between pages in ZIM.  You can easiy refer to subpages by typing in the page name (which should not contain any spaces) preceeded by a + sign.  To refer to the page at the top of the tree enter the page name preceeded by a :  Refer to the ZIM help pages for further information on managing links.  Having entered the link in this way you can then edit the text that is displayed in your document to something more readable if desired.
+
+You probably want to go back to  [[:index|index.html]] now.
+
+

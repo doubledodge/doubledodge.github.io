@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.60'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Bashpop3Script.html'>Prev</a> ]
+
+			[ <a href='../contents.html'>Index</a> ]
+
+	[ <span class='insen'>Next</span> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>ZIM</h1>
+
+<a href="../index.html" title="index" class="page">index</a><br>
+Possibly due to a bug, ZIM often fails to export the beginning of the page until it encounters a link to another page.  This page began life as a dummy page to provide that first link but has since evolved into a few notes about how to get the desired HTML page structure generated automatically from ZIM.<br>
+<br>
+<h3>Getting a sensible HTML page structure</h3><br>
+<br>
+The default HTML export template always generates a fairly featureless index page which is no use as a landing page.  However if you call the top of the document tree <a href="../index.html" title="index" class="page">index</a>  and when you export the wiki to HTML you name the auto generated page list <strong>contents</strong> you end up with the wanted <a href="../index.html" title="index.html" class="page">index.html</a> as the landing page.  Copying index.html to contents.html to overwrite the auto generated page then completes the job and leaves the web pages in a tidy state.<br>
+<br>
+The HTML templates are stored in <a href="../../../../../../../usr/share/zim/templates/html" title="/usr/share/zim/templates/html/" class="file">/usr/share/zim/templates/html/</a> and it should be possible to suppress the index generation feature completely by making a new template but this has still to be investigated.  Refer to the ZIM manual templates help pages for more information about editing templates.<br>
+<br>
+<h3>Adding links between pages in ZIM</h3><br>
+You can easily refer to sub-pages by typing in the page name (which should not contain any spaces) preceded by a + sign.  Having entered the link in this way you can then edit the text that is displayed in your document to something more readable if desired.<br>
+<br>
+Refer to the ZIM help pages for further information on managing links.<br>
+<br>
+<h3>Preparing to export the ZIM wiki to HTML</h3><br>
+<br>
+Don't forget to spell check all the pages before exporting them.  If the spell checker in ZIM does not work then try the command line spell checker aspell, e.g. from the bash shell type:<br>
+<br>
+aspell -c "file name"<br>
+<br>
+Then to make sure the latest version of the files are processed by ZIM close and open the notebook before exporting the pages to HTML.<br>
+<br>
+You probably want to go back to  <a href="../index.html" title="index.html" class="page">index.html</a> now.<br>
+<br>
+<br>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Attachments and Backlinks -->
+
+	<b>Backlinks:</b>		<a href='../index.html'>index</a>
+<br><br>
+
+
+
+<!-- End Attachments and Backlinks -->
+
+	</body>
+
+</html>

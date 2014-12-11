@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.60'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Bashpop3Documentation.html'>Prev</a> ]
+
+			[ <a href='../contents.html'>Index</a> ]
+
+	[ <a href='./ZIM.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Script Functional Description</h1>
+
+<p>
+Created Tuesday 25 November 2014<br>
+</p>
+
+<p>
+The script begins by launching a separate co-process to communicate with telnet.  The rest of the script communicates with this co-process to send and receive data via telnet and communicate this with the user.    <strong>reqmsg </strong>requests just the current message header then increments its index ready for the next message.  listmail allows the user to view long headers or bodes a page at a time, the total length viewed and the number of lines per page are set as variables to simplify customising it for particular screen sizes.  <strong>askaction</strong> interacts with the user to ask what action to perform.  <strong>headorbody</strong> gives the user the choice of listing either the header only or the brief headers for subject from and to followed by the first (typically 50) lines of the body of the message.  <strong>headsorquit</strong> allows the user to list the brief header information for all the messages or quit out.  The main script then starts <br>
+</p>
+
+<p>
+The core of the script is a pair of nested case statements, the first picks the next state of a state machine and the second looks line by line at the telnet reply read into variable $f.   Every time the outer case is re-entered by the while loop a new line of the telnet response is loaded into $f <u>so if modifying the script then be sure there is always something to process!</u><br>
+</p>
+
+<p>
+The outer case statement is a state machine with 9 different states and depending on the function the user selects various states are followed in sequence before the user receives a prompt for the next action.  These states are now described:<br>
+</p>
+
+<p>
+States 1 and 2 handle the log in.  State 3 triggers the co-process to send a telnet LIST command, if the right response is received from the POP3 server (checked in state 4 ) then state 5 works out how many emails are on the server.  <br>
+</p>
+
+<p>
+State 5 will call headsorquit() if there are no emails or stores the message IDs in the $MSGIDS array if there are messages on the server.  In addition to storing the message IDs the ID and the size of each message is displayed to the user on the console.  NUMID records the total number of messages there are.  The final line of the server's response to the telnet LIST command  Will be a . and control is then handed back to the user.   If there are messages on the server then <strong>askaction</strong> handles the user interaction but if there are no messages then <strong>headsorquit</strong> handles the user interaction. <br>
+</p>
+
+<p>
+<strong>headsorquit</strong> give the user the option of quitting the script and telnet session or rechecking the server for new mail or sending the telnet RSET command should the user have marked emails on the server for deletion and subsequently decided that these emails should be restored for another look.<br>
+</p>
+
+<p>
+ <strong>askaction</strong> provides a wide range of user options.  Most of these revolve around listing the shortened email headers to the console NMESSH headers at a time.  The user is able to move back and forth through a long list of emails and after reviewing any particular mail headers is then able to enter the message number and see the email contents.  The number of lines listed are determined by NLINES and these are then listed to the console MAXLINE lines at a time by <strong>listmail</strong> .  The state machine states 7 and 8 handle the display of the shortened email headers to the user.   State 7 checks the right response has been returned by the server to the telnet TOP command (the server should respond OK to each TOP command), then state 8 filters the headers for just the lines of interest or if the last email on the server has been listed or NMESSH headers have been displayed then control is returned again to the user to decide what to do next.  The server will complete each header listing with a . on a line on its own and this is the cue for state 8 to check if it has listed all the headers requested and return control to the user or continue with the next header.<br>
+</p>
+
+<p>
+State 6 handles the listing to the console of the entire email header for a particular message requested by the user through  <strong>askaction</strong> or just repeats the  shortened email header for the requested message followed by the first NLINES of the body of that email.  In each case <strong>listmail</strong> is called to control the number of lines displayed at a time on the console.  <br>
+</p>
+
+<p>
+After the user selects a particular message for listing to the console then <strong>delorlist</strong> gives the user the option of either marking it for deletion or listing its full header or re-listing its body.  Should the connection to the server be lost then none of the emails will get deleted and in addition the user is given the option of restoring the mrked emails before quitting the script as well.<br>
+</p>
+
+<p>
+After an email is deleted then state 9 is entered and after checking the server response to the previous command it was issued states 4 and 5 are re-entered in order to update the list of the messages remaining on the server.<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Attachments and Backlinks -->
+
+	<b>Backlinks:</b>		<a href='../index.html'>index</a>		<a href='./Bashpop3Documentation.html'>index:Bashpop3Documentation</a>
+<br><br>
+
+
+
+<!-- End Attachments and Backlinks -->
+
+	</body>
+
+</html>

@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2014-12-10T17:54:19+00:00
+
+====== ZIM ======
+Created Wednesday 10 December 2014
+[[index]]
+Possibly due to a bug, ZIM often fails to export the beginning of the page until it encounters a link to another page.  This page began life as a dummy page to provide that first link but has since evolved into a few notes about how to get the desired HTML page structure generated automatically from ZIM.
+
+==== Getting a sensible HTML page structure ====
+
+The default HTML export template always generates a fairly featureless index page which is no use as a landing page.  However if you call the top of the document tree [[index]]  and when you export the wiki to HTML you name the auto generated page list **contents** you end up with the wanted [[index|index.html]] as the landing page.  Copying index.html to contents.html to overwrite the auto generated page then completes the job and leaves the web pages in a tidy state.
+
+The HTML templates are stored in [[/usr/share/zim/templates/html/]] and it should be possible to suppress the index generation feature completely by making a new template but this has still to be investigated.  Refer to the ZIM manual templates help pages for more information about editing templates.
+
+==== Adding links between pages in ZIM ====
+You can easily refer to sub-pages by typing in the page name (which should not contain any spaces) preceded by a + sign.  Having entered the link in this way you can then edit the text that is displayed in your document to something more readable if desired.
+
+Refer to the ZIM help pages for further information on managing links.
+
+==== Preparing to export the ZIM wiki to HTML ====
+
+Don't forget to spell check all the pages before exporting them.  If the spell checker in ZIM does not work then try the command line spell checker aspell, e.g. from the bash shell type:
+
+aspell -c "file name"
+
+Then to make sure the latest version of the files are processed by ZIM close and open the notebook before exporting the pages to HTML.
+
+You probably want to go back to  [[:index|index.html]] now.
+
+

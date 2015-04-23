@@ -20,7 +20,7 @@ Refer to the ZIM help pages for further information on managing links.
 
 ==== Preparing to export the ZIM wiki to HTML ====
 
-Don't forget to spell check all the pages before exporting them.  If the spell checker in ZIM does not work then try the command line spell checker aspell, e.g. from the bash shell type:
+Don't forget to spell check all the pages before exporting them.  If the spell checker in ZIM does not work then open the zim generated .txt file in your spell checking text editor (e.g. pluma on Linux Mint Mate or use the Linux command line spell checker aspell, e.g. from the bash shell type:
 
 aspell -c "file name"
 

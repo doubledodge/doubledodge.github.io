@@ -41,31 +41,50 @@
 
 <h1>ZIM</h1>
 
+<p>
+Created Wednesday 10 December 2014<br>
 <a href="../index.html" title="index" class="page">index</a><br>
 Possibly due to a bug, ZIM often fails to export the beginning of the page until it encounters a link to another page.  This page began life as a dummy page to provide that first link but has since evolved into a few notes about how to get the desired HTML page structure generated automatically from ZIM.<br>
-<br>
-<h3>Getting a sensible HTML page structure</h3><br>
-<br>
+</p>
+
+<h3>Getting a sensible HTML page structure</h3>
+
+<p>
 The default HTML export template always generates a fairly featureless index page which is no use as a landing page.  However if you call the top of the document tree <a href="../index.html" title="index" class="page">index</a>  and when you export the wiki to HTML you name the auto generated page list <strong>contents</strong> you end up with the wanted <a href="../index.html" title="index.html" class="page">index.html</a> as the landing page.  Copying index.html to contents.html to overwrite the auto generated page then completes the job and leaves the web pages in a tidy state.<br>
-<br>
+</p>
+
+<p>
 The HTML templates are stored in <a href="../../../../../../../usr/share/zim/templates/html" title="/usr/share/zim/templates/html/" class="file">/usr/share/zim/templates/html/</a> and it should be possible to suppress the index generation feature completely by making a new template but this has still to be investigated.  Refer to the ZIM manual templates help pages for more information about editing templates.<br>
-<br>
-<h3>Adding links between pages in ZIM</h3><br>
+</p>
+
+<h3>Adding links between pages in ZIM</h3>
+<p>
 You can easily refer to sub-pages by typing in the page name (which should not contain any spaces) preceded by a + sign.  Having entered the link in this way you can then edit the text that is displayed in your document to something more readable if desired.<br>
-<br>
+</p>
+
+<p>
 Refer to the ZIM help pages for further information on managing links.<br>
-<br>
-<h3>Preparing to export the ZIM wiki to HTML</h3><br>
-<br>
-Don't forget to spell check all the pages before exporting them.  If the spell checker in ZIM does not work then try the command line spell checker aspell, e.g. from the bash shell type:<br>
-<br>
+</p>
+
+<h3>Preparing to export the ZIM wiki to HTML</h3>
+
+<p>
+Don't forget to spell check all the pages before exporting them.  If the spell checker in ZIM does not work then open the zim generated .txt file in your spell checking text editor (e.g. pluma on Linux Mint Mate or use the Linux command line spell checker aspell, e.g. from the bash shell type:<br>
+</p>
+
+<p>
 aspell -c "file name"<br>
-<br>
+</p>
+
+<p>
 Then to make sure the latest version of the files are processed by ZIM close and open the notebook before exporting the pages to HTML.<br>
-<br>
+</p>
+
+<p>
 You probably want to go back to  <a href="../index.html" title="index.html" class="page">index.html</a> now.<br>
-<br>
-<br>
+</p>
+
+
 
 
 <!-- End wiki content -->

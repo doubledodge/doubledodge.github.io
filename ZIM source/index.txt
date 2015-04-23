@@ -7,12 +7,19 @@ Creation-Date: 2014-12-10T14:43:24+00:00
 
 ====== Welcome ======
 
-This is the index page for my github projects.  Currently there is only one project uploaded: the bashpop3 project.  This is a Linux bash script that checks mail on a POP3 email server, allowing emails to be examined and junk to be deleted before mail is download with a regular mail client
+This is the index page for my github projects.  These are summarised below, follow the links for more information.
+
+===== bashpop3 =====
+This is a Linux bash script that checks mail on a POP3 email server, allowing emails to be examined and junk to be deleted before mail is download with a regular mail client
 
 The general documentation for the bashpop3 project is here [[+Bashpop3Documentation]]
 
 The detailed script description is here [[+Bashpop3Script]] 
 
+===== CherryPy image generation =====
+Cherry Py is a python package that goes somewhat further than the simple web server.  This is a little example that demonstrates how it can be used to serve programmatically generated images to the client's browser (I couldn't find any examples on the web for how to do this so having worked out a way to do it I have added [[https://github.com/doubledodge/CherryPy-on-the-fly-image-generation|the solution to my git repository]]).
+
+===== finally =====
 There are also some notes [[+ZIM|here]]  about using ZIM to auto generate this web-site.
 
 
